@@ -18,7 +18,7 @@
 
 **开发环境**：Python 3.14.0、PyTorch 2.10.0（CPU）、scikit-learn 1.9.1、NumPy、SciPy、Matplotlib。
 
-**代码仓库**：[https://github.com/KaGaMi9999/nku-2026-machinelearning]()
+**代码仓库**：[KaGaMi9999/nku-2026-machinelearning](https://github.com/KaGaMi9999/nku-2026-machinelearning)
 
 ---
 
