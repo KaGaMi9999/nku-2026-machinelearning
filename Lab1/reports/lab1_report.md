@@ -18,7 +18,7 @@
 
 **开发环境**：Python 3.14.0、PyTorch 2.10.0（CPU）、scikit-learn 1.9.1、NumPy、SciPy、Matplotlib。
 
-**代码仓库**：https://github.com/KaGaMi9999/nku-2026-machinelearning
+**代码仓库**：[https://github.com/KaGaMi9999/nku-2026-machinelearning]()
 
 ---
 
@@ -82,9 +82,9 @@
 | 5   | 手写 KNN  | 83.33%     | 0.9202 | 0.0588 |
 | 5   | sklearn | 83.33%     | 0.9202 | 0.0588 |
 
-![人脸样本](../face_samples.png)
+![人脸样本](face_samples.png)
 
-![指标对比](../metrics.png)
+![指标对比](metrics.png)
 
 ### 3.4 分析
 
@@ -101,7 +101,9 @@
 ### 4.2 实现方法
 
 - **数据**：Semeion 手写数字（16×16 二值），分层划分训练 1274 / 测试 319。
+
 - **旋转扩充**：对训练集做 **左上（逆时针，正角）+10°、+15°** 与 **左下（顺时针，负角）−10°、−15°** 共四个方向旋转（`scipy.ndimage.rotate`，双线性插值），训练集扩充为 5 倍（1274 → 6370）。
+
 - **模型**：PyTorch CNN，结构如下：
   
   ```
@@ -112,6 +114,7 @@
     ├─ Linear(1024→128) + ReLU + Dropout(0.3)
     └─ Linear(128→10) → softmax
   ```
+
 - **训练**：Adam（lr=1e-3）、CrossEntropyLoss、batch=64、40 epoch。
 
 代码文件：`codes/cnn_handwritten.py`
@@ -123,9 +126,9 @@
 | 基线（无增强） | **95.92%** | 10.82%     |
 | 旋转增强    | 88.09%     | **21.24%** |
 
-![旋转增强示意](../rotation_samples.png)
+![旋转增强示意](rotation_samples.png)
 
-![结果对比](../cnn_results.png)
+![结果对比](cnn_results.png)
 
 ### 4.4 分析
 
@@ -147,7 +150,7 @@
 Lab1/
 ├── codes/
 │   ├── knn_semeion.py       # 初级：手写 kNN + 留一法
-│   ├── knn_face.py          # 中级：ORL 人脸识别 + sklearn 对比
+│   ├── knn_face.py          # 中级：ORL 人脸识别 与 sklearn 对比
 │   ├── cnn_handwritten.py   # 高级：旋转增强 + CNN
 │   ├── requirements.txt     # 依赖清单
 │   └── _deps/               # 本地第三方依赖（sklearn 等）
