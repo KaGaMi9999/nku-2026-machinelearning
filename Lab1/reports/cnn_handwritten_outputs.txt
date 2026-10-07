@@ -1,0 +1,35 @@
+PS B:\Homework\Machinelearning\Lab1\codes> & B:/MySoftwarework/Python/Python314/python.exe b:/Homework/Machinelearning/Lab1/codes/cnn_handwritten.py
+样本数: 1593  图像: 16×16  类别: 10
+训练集: 1274  测试集: 319
+
+[基线（无增强）] 训练样本数: 1274
+  epoch  1/40  loss=2.0554  train_acc=30.69%
+  epoch  5/40  loss=0.2316  train_acc=92.39%
+  epoch 10/40  loss=0.0871  train_acc=97.41%
+  epoch 15/40  loss=0.0432  train_acc=98.82%
+  epoch 20/40  loss=0.0416  train_acc=98.43%
+  epoch 25/40  loss=0.0157  train_acc=99.69%
+  epoch 30/40  loss=0.0133  train_acc=99.69%
+  epoch 35/40  loss=0.0097  train_acc=99.84%
+  epoch 40/40  loss=0.0057  train_acc=100.00%
+[基线（无增强）] 测试集 ACC = 95.92%
+
+[旋转增强] 训练样本数: 6370
+  epoch  1/40  loss=2.1732  train_acc=19.20%
+  epoch  5/40  loss=1.5254  train_acc=38.04%
+  epoch 10/40  loss=1.1857  train_acc=51.60%
+  epoch 15/40  loss=0.9690  train_acc=60.58%
+  epoch 20/40  loss=0.7863  train_acc=68.68%
+  epoch 25/40  loss=0.6297  train_acc=74.99%
+  epoch 30/40  loss=0.5417  train_acc=78.29%
+  epoch 35/40  loss=0.4624  train_acc=81.85%
+  epoch 40/40  loss=0.4068  train_acc=84.40%
+[旋转增强] 测试集 ACC = 88.09%
+
+========================================================
+模型           |      原始测试集 |      旋转测试集
+--------------------------------------------------------
+基线(无增强)      |     95.92% |     10.82%
+旋转增强           |     88.09% |     21.24%
+--------------------------------------------------------
+旋转鲁棒性提升 = +10.42 个百分点

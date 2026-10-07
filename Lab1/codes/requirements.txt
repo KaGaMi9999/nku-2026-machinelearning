@@ -1,0 +1,14 @@
+# Lab1 依赖清单（requirements.txt）
+# 安装方式：pip install -r requirements.txt
+#
+# 注意：若使用 Python 3.14，scikit-learn 需要 >= 1.9（1.9.x 才提供 cp314 的 wheel）。
+# 若目标环境已装有 numpy/scipy 但无法写入系统目录，可改用：
+#   pip install -r requirements.txt --target ./codes/_deps
+
+# ---- 核心依赖（运行 codes/ 下的脚本必需）----
+numpy>=1.26
+scikit-learn>=1.9
+
+# ---- 可选依赖（仅生成报告图表时用到）----
+matplotlib>=3.8
+Pillow>=10.0
