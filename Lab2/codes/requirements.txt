@@ -1,0 +1,5 @@
+# Lab2 依赖清单（安装：pip install -r requirements.txt）
+numpy>=1.26
+pandas>=2.0
+scikit-learn>=1.9
+matplotlib>=3.8

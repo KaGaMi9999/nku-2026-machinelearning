@@ -1,0 +1,56 @@
+======================================================================
+实验二 中级：特征影响与共线性分析
+======================================================================
+训练集 MSE=0.559460, 测试集 MSE=0.579387
+
+标准化回归系数（按绝对值降序）:
+特征                                系数        |系数|
+density                    -0.4291      0.4291
+residual sugar              0.4034      0.4034
+alcohol                     0.2508      0.2508
+volatile acidity           -0.1907      0.1907
+pH                          0.1047      0.1047
+sulphates                   0.0685      0.0685
+free sulfur dioxide         0.0574      0.0574
+fixed acidity               0.0481      0.0481
+citric acid                 0.0142      0.0142
+chlorides                  -0.0128      0.0128
+total sulfur dioxide       -0.0015      0.0015
+偏置项 5.8780
+
+置换重要性（打乱特征后测试 MSE 增量，30 次平均）:
+特征                             ΔMSE 均值         标准差
+density                     0.355718    0.019340
+residual sugar              0.302233    0.020529
+alcohol                     0.130504    0.014336
+volatile acidity            0.069499    0.009604
+pH                          0.016133    0.005288
+sulphates                   0.010390    0.002864
+free sulfur dioxide         0.005123    0.002438
+fixed acidity               0.004596    0.001975
+total sulfur dioxide        0.000074    0.000069
+chlorides                  -0.000192    0.000563
+citric acid                -0.001430    0.000638
+
+相关性最强的一对特征: residual sugar 与 density，r = 0.8399
+
+共线性对照实验（标准化特征，正规方程求解）:
+模型                                            系数_j        系数_k      训练 MSE      测试 MSE
+保留两者                                      0.4034     -0.4291    0.559460    0.579387
+去掉 residual sugar                            nan      0.1301    0.572983    0.592689
+去掉 density                                0.1307         nan    0.566476    0.586910
+
+其余变量的系数变化（保留两者 -> 去掉其一）:
+特征                                完整模型      去掉 density
+fixed acidity                 0.0481         -0.0456
+volatile acidity             -0.1907         -0.2010
+citric acid                   0.0142          0.0077
+residual sugar                0.4034          0.1307
+chlorides                    -0.0128         -0.0270
+free sulfur dioxide           0.0574          0.0750
+total sulfur dioxide         -0.0015         -0.0255
+pH                            0.1047          0.0283
+sulphates                     0.0685          0.0456
+alcohol                       0.2508          0.4467
+
+图已保存: reports/figs/feature_coefficients.png, permutation_importance.png, correlation_heatmap.png
